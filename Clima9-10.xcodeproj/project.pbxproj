@@ -15,6 +15,7 @@
 		38471955256B682C009D7649 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38471953256B682C009D7649 /* LaunchScreen.storyboard */; };
 		3847195D256CCB1A009D7649 /* ClimaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847195C256CCB1A009D7649 /* ClimaManager.swift */; };
 		3847195F256DFE49009D7649 /* ClimaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847195E256DFE49009D7649 /* ClimaData.swift */; };
+		38471961256E0BC7009D7649 /* ClimaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38471960256E0BC7009D7649 /* ClimaModelo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		38471956256B682C009D7649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3847195C256CCB1A009D7649 /* ClimaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaManager.swift; sourceTree = "<group>"; };
 		3847195E256DFE49009D7649 /* ClimaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaData.swift; sourceTree = "<group>"; };
+		38471960256E0BC7009D7649 /* ClimaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaModelo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				3847194A256B681C009D7649 /* SceneDelegate.swift */,
 				3847194C256B681C009D7649 /* ViewController.swift */,
 				3847195C256CCB1A009D7649 /* ClimaManager.swift */,
+				38471960256E0BC7009D7649 /* ClimaModelo.swift */,
 				3847195E256DFE49009D7649 /* ClimaData.swift */,
 				3847194E256B681C009D7649 /* Main.storyboard */,
 				38471951256B682C009D7649 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38471961256E0BC7009D7649 /* ClimaModelo.swift in Sources */,
 				3847194D256B681C009D7649 /* ViewController.swift in Sources */,
 				38471949256B681C009D7649 /* AppDelegate.swift in Sources */,
 				3847195D256CCB1A009D7649 /* ClimaManager.swift in Sources */,
