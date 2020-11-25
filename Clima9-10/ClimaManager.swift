@@ -9,6 +9,7 @@
 import Foundation
 
 struct ClimaManager {
+    //Indica la URL de la API a consultar
     let climaUrl = "https://api.openweathermap.org/data/2.5/weather?appid=854dbcb1678d84705d908e60106a586a&units=metric&"
     
     func fetchClima(nombreCiudad:String) {
