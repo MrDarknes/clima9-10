@@ -24,8 +24,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     //Programar el botón del teclado
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(buscarTextField.text!)
+        //print(buscarTextField.text!)
         ciudadLabel.text = buscarTextField.text
+        self.climaManager.fetchClima(nombreCiudad: buscarTextField.text!)
         return true
     }
     

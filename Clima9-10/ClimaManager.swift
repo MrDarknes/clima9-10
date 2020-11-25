@@ -10,7 +10,7 @@ import Foundation
 
 struct ClimaManager {
     //Indica la URL de la API a consultar
-    let climaUrl = "https://api.openweathermap.org/data/2.5/weather?appid=854dbcb1678d84705d908e60106a586a&units=metric&"
+    let climaUrl = "https://api.openweathermap.org/data/2.5/weather?appid=854dbcb1678d84705d908e60106a586a&units=metric&lang=es&"
     
     func fetchClima(nombreCiudad:String) {
         let urlString = "\(climaUrl)&q=\(nombreCiudad)"
@@ -33,12 +33,30 @@ struct ClimaManager {
                 }
                 if let datosSeguros = data {
                     //Decodificar el obj JSON
-                    let dataString = String(data: datosSeguros, encoding: .utf8)
-                    print(dataString!)
+                    self.parseJSON(climaData: datosSeguros)
                 }
             }
             //4.- Empezar la tarea
             tarea.resume()
+        }
+        
+        
+        
+    }
+    
+    func parseJSON(climaData: Data){
+        let decoder = JSONDecoder()
+        do{
+            let dataDecodificada = try decoder.decode(ClimaData.self, from: climaData)
+            print(dataDecodificada.name)
+            print(dataDecodificada.cod)
+            print(dataDecodificada.main.humidity)
+            print(dataDecodificada.main.temp)
+            print(dataDecodificada.weather[0].description)
+            print(dataDecodificada.coord.lat)
+            print(dataDecodificada.coord.lon)
+        } catch {
+            print(error)
         }
         
     }
