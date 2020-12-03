@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clima9_10" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nubes fondo" translatesAutoresizingMaskIntoConstraints="NO" id="xn5-TX-6IW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eBF-ri-5SX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0C-6o-5de" userLabel="busquedaView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9Tj-Bz-N8f">
+                                                <rect key="frame" x="15" y="5" width="384" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTG-Og-R8g" userLabel="ubicacion">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="55" id="yHL-SM-1qe"/>
+                                                        </constraints>
+                                                        <state key="normal" image="ubication_preview_rev_2"/>
+                                                        <connections>
+                                                            <action selector="obtenerUbicacion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPi-am-SpE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Ciudad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KLi-V9-qqF">
+                                                        <rect key="frame" x="82" y="0.0" width="220" height="45"/>
+                                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="220" id="iIY-uG-21V"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xe-DL-bVs" userLabel="lupa">
+                                                        <rect key="frame" x="329" y="0.0" width="55" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="55" id="S8O-xp-gOG"/>
+                                                        </constraints>
+                                                        <state key="normal" image="lupa_preview_rev_1"/>
+                                                        <connections>
+                                                            <action selector="buscarButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kaa-ed-bJJ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9Tj-Bz-N8f" secondAttribute="trailing" constant="15" id="2hO-Mb-jCh"/>
+                                            <constraint firstItem="9Tj-Bz-N8f" firstAttribute="top" secondItem="n0C-6o-5de" secondAttribute="top" constant="5" id="BLj-Ld-8aB"/>
+                                            <constraint firstAttribute="height" constant="50" id="K90-Hs-ysG"/>
+                                            <constraint firstItem="9Tj-Bz-N8f" firstAttribute="leading" secondItem="n0C-6o-5de" secondAttribute="leading" constant="15" id="t23-FQ-JKx"/>
+                                            <constraint firstAttribute="bottom" secondItem="9Tj-Bz-N8f" secondAttribute="bottom" id="wFv-Ga-apa"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKy-K2-rJX" userLabel="resultadoView">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="768"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F2i-2x-0s6" userLabel="Stack View Vertical">
+                                                <rect key="frame" x="15" y="160" width="384" height="208"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="IgK-fp-AjR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="69.5"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nubesicono_preview_rev_1" translatesAutoresizingMaskIntoConstraints="NO" id="rsx-Fk-k2f">
+                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="69.5"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy9-rN-8AY" userLabel="labelTemp">
+                                                                <rect key="frame" x="118" y="0.0" width="169.5" height="69.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-1c-xq3">
+                                                                <rect key="frame" x="287.5" y="0.0" width="96.5" height="69.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Morelia Michoacán" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBY-sB-ylQ">
+                                                        <rect key="frame" x="0.0" y="69.5" width="384" height="69"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc0-2q-TMR">
+                                                        <rect key="frame" x="0.0" y="138.5" width="384" height="69.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="F2i-2x-0s6" firstAttribute="top" secondItem="BKy-K2-rJX" secondAttribute="top" constant="160" id="0ua-Dm-gBq"/>
+                                            <constraint firstAttribute="trailing" secondItem="F2i-2x-0s6" secondAttribute="trailing" constant="15" id="ZIB-Jv-Gz1"/>
+                                            <constraint firstItem="F2i-2x-0s6" firstAttribute="leading" secondItem="BKy-K2-rJX" secondAttribute="leading" constant="15" id="lJ1-es-uEY"/>
+                                            <constraint firstAttribute="bottom" secondItem="F2i-2x-0s6" secondAttribute="bottom" constant="400" id="wdv-OY-ygd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="n0C-6o-5de" firstAttribute="leading" secondItem="eBF-ri-5SX" secondAttribute="leading" id="4Jr-FZ-dSq"/>
+                                    <constraint firstAttribute="trailing" secondItem="n0C-6o-5de" secondAttribute="trailing" id="8NA-Ef-bHn"/>
+                                    <constraint firstItem="n0C-6o-5de" firstAttribute="top" secondItem="eBF-ri-5SX" secondAttribute="top" id="Lnr-a0-ksz"/>
+                                    <constraint firstItem="BKy-K2-rJX" firstAttribute="top" secondItem="n0C-6o-5de" secondAttribute="bottom" id="PJ7-eM-0hQ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eBF-ri-5SX" secondAttribute="bottom" id="Jy9-r6-234"/>
+                            <constraint firstItem="eBF-ri-5SX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PWk-GT-mGH"/>
+                            <constraint firstItem="eBF-ri-5SX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cvz-XN-hst"/>
+                            <constraint firstItem="eBF-ri-5SX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kjA-ys-984"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buscarTextField" destination="KLi-V9-qqF" id="8oD-ye-We0"/>
+                        <outlet property="ciudadLabel" destination="IBY-sB-ylQ" id="TGT-OV-Cai"/>
+                        <outlet property="climaImageView" destination="rsx-Fk-k2f" id="NUS-29-Qzk"/>
+                        <outlet property="descripcionLabel" destination="dc0-2q-TMR" id="4X7-96-5Nz"/>
+                        <outlet property="imgFondo" destination="xn5-TX-6IW" id="tXz-7P-Cvm"/>
+                        <outlet property="temperaturaLabel" destination="Dy9-rN-8AY" id="YlI-DW-f9H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lupa_preview_rev_1" width="56.5" height="56.5"/>
+        <image name="nubes fondo" width="640" height="360"/>
+        <image name="nubesicono_preview_rev_1" width="56.5" height="56.5"/>
+        <image name="ubication_preview_rev_2" width="65" height="65.5"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
