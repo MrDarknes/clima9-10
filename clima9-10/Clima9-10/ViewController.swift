@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     var climaManager = ClimaManager()
     var locationManager = CLLocationManager()
     
+    @IBOutlet weak var labelSensacionTemp: UILabel!
+    @IBOutlet weak var labelViento: UILabel!
+    @IBOutlet weak var labelTempMax: UILabel!
+    @IBOutlet weak var labelTempMin: UILabel!
     @IBOutlet weak var imgFondo: UIImageView!
     @IBOutlet weak var climaImageView: UIImageView!
     @IBOutlet weak var temperaturaLabel: UILabel!
@@ -68,8 +72,17 @@ extension ViewController: CLLocationManagerDelegate{
 //MARK:- METODOS PARA ACTUALIZAR LA INTERFAZ DE USUARIO
 extension ViewController : ClimaManagerDelegate{
     func huboError(cualError: Error) {
+        print(cualError.localizedDescription)
+        var msgError : String  {
+            switch cualError.localizedDescription {
+            case "The data couldn’t be read because it is missing.":
+                return "Por favor verifica el nombre de la ciudad"
+            default:
+                return "Por favor verifica tu conexiòn a internet"
+            }
+        }
         DispatchQueue.main.async {
-            let alerta = UIAlertController(title: "Hubo un error", message: "Se produjo el error:\(cualError.localizedDescription)", preferredStyle: .alert)
+            let alerta = UIAlertController(title: "Hubo un error", message: "Se produjo el error:\(msgError)", preferredStyle: .alert)
             let aceptarAlert = UIAlertAction(title: "Aceptar", style: .default) { (UIAlertAction) in
                 print("OK")
             }
@@ -86,8 +99,13 @@ extension ViewController : ClimaManagerDelegate{
         //EJECUTAR CUANDO LA TAREA ASINCRONA TERMINE SU HILO DE EJECUCIÓN
         DispatchQueue.main.async {
             //ELEMENTOS GRÁFICOS SE MODIFICAN SOLO DESDE EL HILO PRINCIPAL
+            self.ciudadLabel.text = clima.nombre
             self.temperaturaLabel.text = String(clima.temperaturaCelcius)
-            self.ciudadLabel.text = "\(clima.nombre) "
+            self.labelTempMin.text = "\(clima.temperaturaMinima) °C"
+            self.labelTempMax.text = "Temp min:\(clima.temperaturaMaxima) °C"
+            self.labelTempMin.text = "Temp max:\(clima.temperaturaMinima) °C"
+            self.labelSensacionTemp.text = "Sensacion: \(clima.sensacionTemp) °C"
+            self.labelViento.text = "Viento: \(clima.viento) Km/h"
             self.descripcionLabel.text = "\(clima.descripcionClima)"
             self.imgFondo.image = UIImage(named: clima.condicionClima)
             

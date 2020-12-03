@@ -14,12 +14,17 @@ struct ClimaData : Decodable, Encodable{
     let main : Main
     let weather : [Weather]
     let coord : Cord
+    let wind : Wind
+    
     
 }
 
 struct Main : Codable {
     let temp : Double
     let humidity : Int
+    let temp_min : Double
+    let temp_max : Double
+    let feels_like : Double
     
 }
 
@@ -32,4 +37,9 @@ struct Weather : Codable {
 struct Cord : Codable {
     let lat : Double
     let lon : Double
+}
+
+struct Wind : Codable{
+    let speed : Double
+    
 }

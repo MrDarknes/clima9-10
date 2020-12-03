@@ -13,6 +13,10 @@ struct ClimaModelo {
     let nombre : String
     let descripcionClima : String
     let temperaturaCelcius : Double
+    let temperaturaMinima : Double
+    let temperaturaMaxima : Double
+    let sensacionTemp : Double
+    let viento : Double
     let iconoID : String
     
     //CREAR PROPIEDAD COMPUTADA
